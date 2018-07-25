@@ -8,17 +8,8 @@ pipeline {
   }
   stages {
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            sh 'npm install'
-          }
-        }
-        stage('Maven') {
-          steps {
-            sh 'maven install'
-          }
-        }
+      steps {
+        sh 'npm install'
       }
     }
     stage('Test') {
